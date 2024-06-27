@@ -1,20 +1,20 @@
 const joi = require('joi');
 const { CANDIDATES_ROLE } = require('../Constant');
 
-const registerUserFields = joi.object({
-    userName: joi.string().required().messages({ 'any.required': 'userName is required' }),
-    role: joi.string().valid(CANDIDATES_ROLE.CANDIDATE, CANDIDATES_ROLE.PARENT).required().messages({
-        'any.required': 'role is required',
-        'any.only': 'role must be either Candidate or parent'
-    })
-});
+// const registerUserFields = joi.object({
+//     userName: joi.string().required().messages({ 'any.required': 'userName is required' }),
+//     role: joi.string().valid(CANDIDATES_ROLE.CANDIDATE, CANDIDATES_ROLE.PARENT).required().messages({
+//         'any.required': 'role is required',
+//         'any.only': 'role must be either Candidate or parent'
+//     })
+// });
 
-const loginUserFields = joi.object({
-    role: joi.string().valid(CANDIDATES_ROLE.CANDIDATE, CANDIDATES_ROLE.PARENT).required().messages({
-        'any.required': 'role is required',
-        'any.only': 'role must be either Candidate or parent'
-    })
-})
+// const loginUserFields = joi.object({
+//     role: joi.string().valid(CANDIDATES_ROLE.CANDIDATE, CANDIDATES_ROLE.PARENT).required().messages({
+//         'any.required': 'role is required',
+//         'any.only': 'role must be either Candidate or parent'
+//     })
+// })
 
 const resetUserPasswordFields = joi.object({
     password: joi.string().required().messages({
@@ -29,7 +29,7 @@ const resetUserPasswordFields = joi.object({
 // })
 
 module.exports = {
-    registerUserFields,
-    loginUserFields,
+    // registerUserFields,
+    // loginUserFields,
     resetUserPasswordFields,
 }

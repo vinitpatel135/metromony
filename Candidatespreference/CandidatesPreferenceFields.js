@@ -54,6 +54,8 @@ const candidatePreferenceFields = Joi.object({
     abroadCity: Joi.string().allow(null, ''),
     abroadState: Joi.string().allow(null, ''),
     abroadCountry: Joi.string().allow(null, ''),
+    permanentAddress : Joi.string().required()
+    
 });
 
 module.exports = {

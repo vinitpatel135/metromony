@@ -8,9 +8,7 @@ class CandidatePrefranceController {
 
     async addCandidatePreference(req, res) {
         try {
-            console.log(req);
             console.log(req.body, "----req.body");
-            console.log(req.files, "----req.files");
             const { images, video, files, imagesforAdhar } = req.files
             const { candidateId, gender, candidateName, surname, originalSurname, nativePlace, fatherName, motherName, age, mobileNumber, parentContactNumbers, candidateEmail, educationalQualification, mediumOfQualification, house, houseAddress, city, pincode, state, stayingIn, country, dateOfBirth, timeOfBirth, placeOfBirth, maritalStatus, mangalStatus, shuniStatus, work, detailsOfWork, personalIncome, familyIncome, officeWork, height, weight, complexion, bloodGroup, thalassemia, familyMembers, numberOfMarriedSiblings, numberOfUnmarriedSiblings, yourPositionAmongSiblings, numberOfFamilyMembersEarning, diet, hobbies, qualityOfYourPartner, wishToGoAbroadAfterMarriageIfRequired } = req.body;
             const { error, value } = candidatePreferenceFields.validate({ ...req.body });
@@ -37,6 +35,7 @@ class CandidatePrefranceController {
             imageData.videoPath = videoData.videoPath
             imageData.documentPath = filesData.documentPath
             imageData.addressProof = AddressProfe.addressProof
+            console.log(imageData, "----imageData")
 
             const uploadData = await mediaModel.model.create({ candidateId: parsedBody.candidateId, ...imageData })
             if (!uploadData) return res.state(400).send({ message: SOMETHING_WENT_WRONG })
