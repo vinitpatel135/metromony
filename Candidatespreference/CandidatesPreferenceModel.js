@@ -19,6 +19,7 @@ class CandidatePrefrenceModel {
             mediumOfQualification: { type: String, required: true },
             house: { type: String, required: true },
             houseAddress: { type: String, required: true },
+            permanentAddress : {type:String , required:true},
             abroadHouseAddress: { type: String, default: null },
             pincode: { type: Number, required: true },
             stayingIn: { type: String, required: true },
