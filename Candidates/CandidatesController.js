@@ -10,7 +10,7 @@ class CandidatesController {
         try {
             const { userName, email, password, phone, role, createdBy, googleAuth } = req.body
             console.log(req.body);
-            // const { error, value } = registerUserFields?.validate({ userName, role });
+            // const { error, value } = registerUserFields.validate({ userName, role });
             if (role == CANDIDATES_ROLE.GUARDIAN && !createdBy) return res.status(400).send({ message: MISSING_DEPENDENCY, error: "createdBy is required" })
             // if (error) return res.status(400).json({ message: MISSING_DEPENDENCY, error: error.details[0].message });
 
