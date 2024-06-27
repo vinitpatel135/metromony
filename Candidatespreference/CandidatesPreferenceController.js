@@ -8,7 +8,6 @@ class CandidatePrefranceController {
 
     async addCandidatePreference(req, res) {
         try {
-            console.log(req);
             console.log(req.body, "----req.body");
             console.log(req.files, "----req.files");
             const { images, video, files, imagesforAdhar } = req.files
